@@ -5,14 +5,6 @@
 :root {
     --header-height: 3rem;
     /* HSL COLORS */
-    --hue: 0;
-    --sat: 0%;
-    --title-color: hsl(var(--hue), var(--sat), 20%);
-    /* --title-color-dark: hsl(var(--hue), var(--sat), 0%); */
-    --title-color-dark: hsl(0, 46%, 51%);
-    --text-color: hsl(var(--hue), var(--sat), 46%);
-    --body-color: hsl(var(--hue), var(--sat), 98%);
-    --container-color: #fff;
     /* STATIC TYPOGRAPHY */
     --body-font: "Nunito", sans-serif;
     --big-font-size: 3.5rem;
@@ -65,6 +57,14 @@
 
 html {
     scroll-behavior: smooth;
+    --hue: 0;
+    --sat: 0%;
+    --title-color: hsl(var(--hue), var(--sat), 20%);
+    /* --title-color-dark: hsl(var(--hue), var(--sat), 0%); */
+    --title-color-dark: hsl(0, 46%, 51%);
+    --text-color: hsl(var(--hue), var(--sat), 46%);
+    --body-color: hsl(var(--hue), var(--sat), 98%);
+    --container-color: #fff;
 }
 
 body, button, input, textarea {
