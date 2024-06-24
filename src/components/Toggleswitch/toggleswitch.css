@@ -1,0 +1,59 @@
+/* src/components/ToggleSwitch.css */
+
+.toggle-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 20px; */
+  }
+  
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    margin: 0 0.2rem 0 0.2rem;
+  }
+  
+  .checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: grey;
+    border-radius: 34px;
+    transition: background-color 0.4s;
+    cursor: pointer;
+  }
+  
+  .toggle label:before {
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 15px;
+    left: 6px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s;
+  }
+  
+  .checkbox:checked + label {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .checkbox:checked + label:before {
+    transform: translateX(15px);
+    background-color: rgb(0, 0, 0);
+  }
+  .size{
+    font-size: 1rem;
+  }

@@ -6,6 +6,7 @@
     z-index: var(--z-fixed);
     background-color: var(--body-color);
 }
+
 .nav {
     height: calc(var(--header-height) + 1.5rem);
     display: flex;
@@ -22,6 +23,7 @@
 .nav__list {
     display: flex;
     column-gap: 2rem;
+    align-items: center;
 }
 
 .nav__link {
@@ -57,7 +59,9 @@
 
     .nav {
         height: var(--header-height);
+        
     }
+    
 
     .nav__menu {
         position: fixed;
@@ -69,6 +73,7 @@
         box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
         border-radius: 1.5rem 1.5rem 0 0;
         transition: .3s;
+        
     }
 
     .show-menu {

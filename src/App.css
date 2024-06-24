@@ -76,6 +76,19 @@ body {
     background-color: var(--body-color);
     color: var(--text-color);
 }
+body.dark-mode {
+    --hue: 0;
+    --sat: 0%;
+    --title-color: hsl(var(--hue), var(--sat), 70%);
+    /* --title-color-dark: hsl(var(--hue), var(--sat), 0%); */
+    --title-color-dark: hsl(0, 46%, 51%);
+    --text-color: hsl(var(--hue), var(--sat), 100%);
+    --text-color1: hsl(var(--hue), var(--sat), 20%);
+    --body-color: hsl(var(--hue), var(--sat), 4%);
+    --container-color: #222;
+
+}
+
 
 h1, h2, h3 {
     color: var(--title-color);

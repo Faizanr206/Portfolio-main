@@ -1,14 +1,35 @@
 import React, {useState} from "react";
 import './header.css';
 import { HiOutlineHome, HiOutlineUser, HiOutlineBadgeCheck, HiOutlineClipboardList, HiOutlinePhotograph, HiOutlineMail, HiX, HiOutlineMenu } from "react-icons/hi";
-
+import { useEffect } from "react";
+import ToggleSwitch from "../Toggleswitch/toggleswitch";
 
 const Header = () => {
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+      const savedMode = JSON.parse(localStorage.getItem("darkMode"));
+      if (savedMode !== null) {
+        setDarkMode(savedMode);
+      }
+    }, []);
+  
+    useEffect(() => {
+      if (darkMode) {
+        document.body.classList.add("dark-mode");
+      } else {
+        document.body.classList.remove("dark-mode");
+      }
+    }, [darkMode]);
+//end
+
+
     window.addEventListener("scroll", function () {
         const header = document.querySelector(".header");
         if(this.scrollY >= 80) header.classList.add("scroll-header");
         else header.classList.remove("scroll-header");
     });
+    
    
     const[Toggle, showMenu] = useState(false);
     const[activeNav, setActiveNav] = useState("#home");
@@ -16,6 +37,7 @@ const Header = () => {
     return(
         <header className="header">
             <nav className="nav container">
+                
                 <a href="index.html" className="nav__logo">Portfolio</a>
                 <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
                     <ul className="nav__list grid">
@@ -55,7 +77,11 @@ const Header = () => {
                                 <HiOutlineMail className="nav__icon"/>Contact
                             </a>
                         </li>
+                        <li className="nav__item" ><ToggleSwitch darkMode={darkMode} setDarkMode={setDarkMode} /></li>
+                        
+                        
                     </ul>
+
                     <HiX className="nav__close" onClick={() => showMenu(!Toggle)} />
                 </div>
                 <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
