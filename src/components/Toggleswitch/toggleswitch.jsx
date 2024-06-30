@@ -1,6 +1,3 @@
-// src/components/ToggleSwitch.js
-
-import React, { useState } from 'react';
 import './toggleswitch.css';
 
 const ToggleSwitch = ({ darkMode, setDarkMode }) => {

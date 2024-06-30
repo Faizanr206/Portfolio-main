@@ -56,4 +56,5 @@
   }
   .size{
     font-size: 1rem;
+    transform: rotate(165deg);
   }

@@ -64,6 +64,7 @@ html {
     --title-color-dark: hsl(0, 46%, 51%);
     --text-color: hsl(var(--hue), var(--sat), 46%);
     --body-color: hsl(var(--hue), var(--sat), 98%);
+    --text-color1: hsl(var(--hue), var(--sat), 40%);
     --container-color: #fff;
 }
 
@@ -86,10 +87,7 @@ body.dark-mode {
     --text-color1: hsl(var(--hue), var(--sat), 20%);
     --body-color: hsl(var(--hue), var(--sat), 4%);
     --container-color: #222;
-
 }
-
-
 h1, h2, h3 {
     color: var(--title-color);
     font-weight: var(--font-semibold);
@@ -227,3 +225,4 @@ img {
   ::-webkit-scrollbar-thumb:hover {
     background: var(--text-color);
   } 
+

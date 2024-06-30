@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import "./contact.css";
 import { HiOutlineMail, HiOutlineArrowSmRight } from "react-icons/hi"
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 const Contact = () => {
     const form = useRef();
@@ -11,6 +13,8 @@ const Contact = () => {
     };
   
     return (
+        <>
+        <Header />
     <section className="contact section" id="contact">
         <h2 className="section__title">Let's Connect</h2>
         <span className="section__subtitle">Contact Me</span>
@@ -26,7 +30,7 @@ const Contact = () => {
                         <h3 className="contact__card-title">Email</h3>
                         <span className="contact__card-data">Faizanr206@gmail.com</span>
                         
-                        <a href="" className="contact__button">
+                        <a href="" className="contact_button">
                             Write Me{" "} 
                             <HiOutlineArrowSmRight className="contact__button-icon" />
                         </a>
@@ -77,6 +81,8 @@ const Contact = () => {
             </div>
         </div>
     </section>
+    <Footer />
+    </>
   );
 }
 

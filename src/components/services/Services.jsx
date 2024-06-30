@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './services.css';
 import { HiOutlineClipboardList, HiOutlineArrowSmRight, HiOutlineCheckCircle, HiX } from 'react-icons/hi';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 const Services = () => {
     const [toggleState, setToggleState] = useState(0);
@@ -10,6 +12,8 @@ const Services = () => {
     };
 
     return (
+        <>
+        <Header />
     <section className="services section" id="services">
         <h2 className="section__title">Services</h2>
         <span className="section__subtitle">Create + Collaborate</span>
@@ -140,6 +144,8 @@ const Services = () => {
         </div>
         
     </section>
+        <Footer />
+    </>
   );
 }
 
