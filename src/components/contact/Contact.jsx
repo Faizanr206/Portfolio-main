@@ -14,7 +14,6 @@ const Contact = () => {
   
     return (
         <>
-        <Header />
     <section className="contact section" id="contact">
         <h2 className="section__title">Let's Connect</h2>
         <span className="section__subtitle">Contact Me</span>
@@ -81,7 +80,6 @@ const Contact = () => {
             </div>
         </div>
     </section>
-    <Footer />
     </>
   );
 }

@@ -8,10 +8,13 @@ import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
 import ScrollUp from "./components/scrollup/ScrollUp";
 import Portfolio from "./components/projects/Portfolio";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   return (
     <>
+    <Header />
       <Home />
       <About />
       <Skills />
@@ -21,6 +24,7 @@ const App = () => {
       <Testimonials />
       <Contact /> 
       <ScrollUp />
+      <Footer />
     </>
   );
 };

@@ -6,7 +6,8 @@ import Skills from './components/skills/Skills';
 import NoPage from './components/NO page/nopage';
 import App from "./App";
 import Projects from "./components/projects/Projects";
-
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
     const router = createBrowserRouter([
       {
         path: "/",
@@ -14,27 +15,27 @@ import Projects from "./components/projects/Projects";
       },
       {
         path: "/Contact",
-        element: <Contact />,
+        element: [<Header /> ,<Contact />, <Footer />],
       },
       {
         path: "/About",
-        element: <About />,
+        element: [<Header /> ,<About />, <Footer />],
       },
       {
         path: "/Services",
-        element: <Services />,
+        element: [<Header /> ,<Services />, <Footer />],
       },
       {
         path: "/Skills",
-        element: <Skills />,
+        element: [<Header /> ,<Skills />, <Footer />],
       },
       {
         path: "/Projects",
-        element: <Projects />,
+        element: [<Header /> ,<Projects />, <Footer />],
       },
       {
         path: "*",
-        element: <NoPage />,
+        element: [<Header /> ,<NoPage />, <Footer />],
       },
     ]);
 

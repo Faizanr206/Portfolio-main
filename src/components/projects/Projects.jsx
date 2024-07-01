@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { projectsData } from "./Data";
 import { projectsNav } from './Data';
 import ProjectItems from "./ProjectItems";
-import Header from '../header/Header';
-import Footer from "../footer/Footer";
 const Projects = () => {
     const [item, setItem] =  useState({ name: "All" });
     const [projects, setProjects] = useState([]);
@@ -28,7 +26,6 @@ const Projects = () => {
 
     return (
         <>
-        <Header />
         <div>
             <div className="project__filters">
                 {projectsNav.map((item,index) => {
@@ -47,7 +44,6 @@ const Projects = () => {
                 })}
             </div>
         </div>
-        <Footer />
         </>
     );
 }
