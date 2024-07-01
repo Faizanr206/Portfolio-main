@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
 import "./contact.css";
 import { HiOutlineMail, HiOutlineArrowSmRight } from "react-icons/hi"
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
     const form = useRef();
@@ -29,10 +28,10 @@ const Contact = () => {
                         <h3 className="contact__card-title">Email</h3>
                         <span className="contact__card-data">Faizanr206@gmail.com</span>
                         
-                        <a href="" className="contact_button">
+                        <Link to="/contact" className="contact_button">
                             Write Me{" "} 
                             <HiOutlineArrowSmRight className="contact__button-icon" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -56,7 +55,7 @@ const Contact = () => {
                         <textarea name="project" cols="30" rows="10" className="contact__form-input" placeholder="Provide some details..."></textarea>
                     </div>
 
-                    <button href="#contact" className="button button--flex">
+                    <button href="#contact" className="button button--flex glow">
                         Send Message
                         <svg
                             class="button__icon"

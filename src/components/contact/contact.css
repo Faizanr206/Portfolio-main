@@ -46,7 +46,7 @@
 }
 
 .contact__button {
-    color: var(--text-color);
+    color: var(--text-color1);
     font-size: var(--small-font-size);
     display: inline-flex;
     align-items: center;
@@ -141,3 +141,7 @@
 
 @media screen and (max-width: 350px) {
 }
+
+.glow:hover{
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(175, 50, 102, 0.4);}
