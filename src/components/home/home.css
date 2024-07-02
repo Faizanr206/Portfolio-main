@@ -29,6 +29,7 @@
     text-align: left;
     text-wrap: nowrap;
     margin-bottom: var(--mb-0-25);
+    max-width: fit-content;
 }
 
 .home__hand {
@@ -172,15 +173,23 @@
     .home__scroll {
         display: none;
     }
+    .home__title{
+        font-size: var(--h1-font-size);
+
+    }
 }
 @media screen and (max-width: 350px) {
     .home__img {
-        width: 180px;
-        height: 180px;
+        max-height: 100vh !important;
+        max-width: 100vh !important;
     }
 
     .home__hand {
         width: 22px;
         height: 22px;
+    }
+    .home__title{
+        font-size: var(--h1-font-size);
+
     }
 }
