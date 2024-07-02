@@ -32,7 +32,7 @@ const Qualification = () => {
                 <div className={toggleState === 1 ? "qualification__content qualification__content-active"
                     : "qualification__content"}>
                     <div className="qualification__data">
-                        <div>
+                        <div className="margin">
                             <h3 className="qualification__title">M.sc Mathematics</h3>
                             <span className="qualification__subtitle">Punjab University</span>
                             <div className="qualification__calendar">
@@ -68,7 +68,7 @@ const Qualification = () => {
                         </div>
 
                     </div>
-                        <div>
+                        <div className="margin">
                             <h3 className="qualification__title">Full Stack Developer</h3>
                             <span className="qualification__subtitle">Coursera</span>
                             <div className="qualification__calendar">
@@ -85,7 +85,7 @@ const Qualification = () => {
                 <div className={toggleState === 2 ? "qualification__content qualification__content-active"
                     : "qualification__content"}>
                     <div className="qualification__data">
-                        <div>
+                        <div className="margin">
                             <h3 className="qualification__title">Full Stack Web Developer</h3>
                             <span className="qualification__subtitle">Freelancer</span>
                             <div className="qualification__calendar">
@@ -114,7 +114,7 @@ const Qualification = () => {
                         </div>
                     </div>
                     <div className="qualification__data">
-                        <div>
+                        <div className="margin">
                             <h3 className="qualification__title">Production Coordinator</h3>
                             <span className="qualification__subtitle">Ghani Value Glass</span>
                             <div className="qualification__calendar">

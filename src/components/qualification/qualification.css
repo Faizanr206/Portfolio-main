@@ -1,5 +1,5 @@
 .qualification__container {
-    max-width: 768px;
+    max-width: auto;
 }
 
 .qualification__tabs {
@@ -86,12 +86,18 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .margin{
+        margin: 0 0 0 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .qualification__container {
         margin-left: var(--mb-1-5);
         margin-right: var(--mb-1-5);
+    }
+    .margin{
+        margin: 0 0 0 0;
     }
 }
 
@@ -103,10 +109,20 @@
     .qualification__button {
         margin: 0 var(--mb-0-75);
     }
+    .margin{
+        margin: 0 0 0 0;
+    }
 }
 
 @media screen and (max-width: 350px) {
     .qualification__data {
         gap: 0.5rem;
     }
+    .margin{
+        margin: 0 0 0 0;
+    }
+}
+
+.margin{
+    margin: 0 0 0 8rem;
 }
