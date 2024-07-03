@@ -1,14 +1,14 @@
-import React, { useRef } from 'react';
+// import React, { useRef } from 'react';
+import { Form } from "react-router-dom";
 import "./contact.css";
 import { HiOutlineMail, HiOutlineArrowSmRight } from "react-icons/hi"
-import { Link } from 'react-router-dom';
-
+import ButtonMailto from '../mailto/Buttonmailto';
 const Contact = () => {
-    const form = useRef();
+    // const form = useRef();
     
     const sendEmail = (e) => {
-        e.preventDefault();
-        e.target.reset();
+       e.preventDefault();
+        e.target.reset(); 
     };
     return (
         <>
@@ -26,11 +26,9 @@ const Contact = () => {
                         
                         <h3 className="contact__card-title">Email</h3>
                         <span className="contact__card-data">Faizanr206@gmail.com</span>
-                        
-                        <Link to="/contact" className="contact_button">
-                            Write Me{" "} 
-                            <HiOutlineArrowSmRight className="contact__button-icon" />
-                        </Link>
+                        <ButtonMailto label="Write me an E-Mail" mailto="Faizanr206@gmail.com"  className="contact_button">
+                        </ButtonMailto>
+                        <HiOutlineArrowSmRight className="contact__button-icon" />
                     </div>
                 </div>
             </div>
@@ -38,7 +36,7 @@ const Contact = () => {
             <div className="contact__content">
                 <h3 className="contact__title">What's the project?</h3>
 
-                <form ref={form} onSubmit={sendEmail} className="contact__form">
+                <Form method='post' action='/Contacts/' onSubmit={sendEmail} className="contact__form">
                     <div className="contact__form-div">
                         <label className="contact__form-tag">Name</label>
                         <input type="text" name="name" className="contact__form-input" placeholder="Type your name" />
@@ -54,7 +52,7 @@ const Contact = () => {
                         <textarea name="project" cols="30" rows="10" className="contact__form-input" placeholder="Provide some details..."></textarea>
                     </div>
 
-                    <button href="#contact" className="button button--flex glow">
+                    <button type="submit" className="button button--flex glow">
                         Send Message
                         <svg
                             class="button__icon"
@@ -74,7 +72,7 @@ const Contact = () => {
                             ></path>
                         </svg>
                     </button>
-                </form>
+                </Form>
             </div>
         </div>
     </section>
