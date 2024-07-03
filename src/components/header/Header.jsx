@@ -39,7 +39,7 @@ const Header = () => {
         <header className="header">
             <nav className="nav container">
                 <Link to="/" className="nav__logo">Portfolio</Link>
-                <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
+                <div className={Toggle ? "nav__menu show-menu dark" : "nav__menu"}>
                     <ul className="nav__list grid">
                         <li className="nav__item">
                             <Link to="/" onClick={() => setActiveNav("#home")}  className={activeNav === "#home" ? "nav__link active-link" : "nav__link"}>

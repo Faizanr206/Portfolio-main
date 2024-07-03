@@ -67,14 +67,17 @@
         position: fixed;
         bottom: -100%;
         right: 100;
-        width: 100vh;
+        width: 100;
         background-color: var(--body-color);
         padding: 2rem 1.5rem 4rem;
-        box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+        box-shadow: 0 1px 8px rgba(var(--box-shadow),var(--box-shadow),var(--box-shadow),0.75);
         border-radius: 1.5rem 1.5rem 0 0;
         transition: .3s;
         justify-content: right;
     }
+    .dark{
+        box-shadow: 0 1px 8px rgba(var(--box-shadow),var(--box-shadow),var(--box-shadow),0.75);
+    }      
 
     .show-menu {
         bottom: 0;
@@ -85,6 +88,8 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
+
+    
 
     .nav__icon {
         font-size: 1.2rem;

@@ -10,7 +10,6 @@ const Contact = () => {
         e.preventDefault();
         e.target.reset();
     };
-  
     return (
         <>
     <section className="contact section" id="contact">
