@@ -3,18 +3,34 @@ const path = require("path");
 const express = require("express");
 var bodyParser = require('body-parser');
 const app = express(); // create express app
-var person =require("./Data");
-
+const persons = require("./Data.jsx");
 // add middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
-app.use(express.static(path.join("http://localhost:3000")));
+app.use(express.static(path.join(__dirname, "../build/")));
+// app.use(express.static(path.join("http://localhost:3000")));
 app.use(express.static("public"));
 // app.use((req, res, next) => {
-//     res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+//     res.sendFile(path.join(__dirname, "../build/", "index.html"));
 //   });
-
-
+app.get("/",function(req,res){
+  res.render('/', { title: 'Express' });
+});
+app.get("/About",function(req,res){
+  res.render('/About', { title: 'Express' });
+});
+app.get("/skills",function(req,res){
+  res.render('/skills', { title: 'Express' });
+});
+app.get("/services",function(req,res){
+  res.render('/services', { title: 'Express' });
+});
+app.get("/contacts",function(req,res){
+  res.render('/contacts', { title: 'Express' });
+});
+app.get("*",function(req,res){
+  res.render('/NoPage', { title: 'Express' });
+});
 app.post('/Contacts/', function(req, res) {
   console.log('receiving data ...');
   var person = {

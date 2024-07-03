@@ -1,15 +1,21 @@
 // import React, { useRef } from 'react';
 import { Form } from "react-router-dom";
 import "./contact.css";
+import { useState } from "react";
 import { HiOutlineMail, HiOutlineArrowSmRight } from "react-icons/hi"
 import ButtonMailto from '../mailto/Buttonmailto';
+
 const Contact = () => {
-    // const form = useRef();
-    
-    const sendEmail = (e) => {
-       e.preventDefault();
-        e.target.reset(); 
+    const [formData, setFormData] = useState({name: "",email: "",message: ""});
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+      setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
     };
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
+      );}
+
     return (
         <>
     <section className="contact section" id="contact">
@@ -36,21 +42,21 @@ const Contact = () => {
             <div className="contact__content">
                 <h3 className="contact__title">What's the project?</h3>
 
-                <Form method='post' action='/Contacts/' onSubmit={sendEmail} className="contact__form">
+                <Form method='post' action='/Contacts/' onSubmit={handleSubmit} className="contact__form">
                     <div className="contact__form-div">
                         <label className="contact__form-tag">Name</label>
-                        <input type="text" name="name" className="contact__form-input" placeholder="Type your name" />
+                        <input type="text" name="name" className="contact__form-input" placeholder="Type your name" value={formData.name} onChange={handleChange} />
                     </div>
 
                     <div className="contact__form-div">
                         <label className="contact__form-tag">Email</label>
-                        <input type="email" name="email" className="contact__form-input" placeholder="Type your email" />
+                        <input type="email" name="email" className="contact__form-input" placeholder="Type your email" value={formData.email} onChange={handleChange}/>
                     </div>
 
                     <div className="contact__form-div contact__form-area">
                         <label className="contact__form-tag">Project</label>
-                        <textarea name="project" cols="30" rows="10" className="contact__form-input" placeholder="Provide some details..."></textarea>
-                    </div>
+                        <textarea id="message" name="message" value={formData.message} onChange={handleChange} className="contact__form-input"/>
+                        </div>
 
                     <button type="submit" className="button button--flex glow">
                         Send Message
@@ -79,5 +85,4 @@ const Contact = () => {
     </>
   );
 }
-
 export default Contact;

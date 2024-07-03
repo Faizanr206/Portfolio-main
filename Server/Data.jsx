@@ -1,5 +1,4 @@
-module.exports=
-  persons = [{
+var persons = [{
     "personid": "1",
     "Name": "person 1",
     "mail": "my@example.com",
@@ -17,4 +16,6 @@ module.exports=
     "mail": "my@example.com",
     "disc": "Discription"
 }]
+
+exports =persons;
 
