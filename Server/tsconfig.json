@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      /* Basic Options */
+      "target": "es2017", 
+      "module": "commonjs",  
+      "lib": ["es2017"], 
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true, 
+    },
+    "include": ["index.ts"]
+  }
+  
