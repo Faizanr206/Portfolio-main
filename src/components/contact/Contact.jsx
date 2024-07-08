@@ -1,20 +1,39 @@
-// import React, { useRef } from 'react';
 import { Form } from "react-router-dom";
 import "./contact.css";
-import { useState } from "react";
 import { HiOutlineMail, HiOutlineArrowSmRight } from "react-icons/hi"
 import ButtonMailto from '../mailto/Buttonmailto';
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
-    const [formData, setFormData] = useState({name: "",email: "",message: ""});
-    const handleChange = (event) => {
-      const { name, value } = event.target;
-      setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-    };
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
-      );}
+    const { register, handleSubmit, formState: { errors,isSubmitting } } = useForm({ 
+        defaultValues: {
+            Name: '',
+            Email: '',
+            Message:''
+          }
+});
+  const delay= (d)=>{
+    return new Promise((res,rej)=>{
+        setTimeout(() => {
+            res();
+        }, (d*1000));
+    })
+  }
+  const onSubmit = async(data) =>{
+    await delay(2)
+    let r = await fetch("http://localhost:8080/Contact",{method:"POST" , headers:{"Contant-type":"application/json",},body: JSON.stringify(data)});
+    let res = await r.text()
+    console.log(data,res);
+  } 
+    // const [formData, setFormData] = useState({name: "",email: "",message: ""});
+    // const handleChange = (event) => {
+    //   const { name, value } = event.target;
+    //   setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    // };
+    // const handleSubmit = (event) => {
+    //   event.preventDefault();
+    //   alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
+    //   );}
 
     return (
         <>
@@ -42,23 +61,26 @@ const Contact = () => {
             <div className="contact__content">
                 <h3 className="contact__title">What's the project?</h3>
 
-                <Form method='post' action='/Contacts/' onSubmit={handleSubmit} className="contact__form">
+                <Form method='post' action=''  onSubmit={handleSubmit(onSubmit)} className="contact__form">
                     <div className="contact__form-div">
                         <label className="contact__form-tag">Name</label>
-                        <input type="text" name="name" className="contact__form-input" placeholder="Type your name" value={formData.name} onChange={handleChange} />
+                        <input type="text" className="contact__form-input" placeholder="Type your name" {...register("Name", { required: {value:true,message: "Required"} , minLength:{value:2,message:"Minimum length is less the 1"}, maxLength:{value:25,message:"Minimum length is greater the 25"} })} />
+                        {errors.Name && <div className="contact__form-tag" >{errors.Name.message}</div>}
                     </div>
 
                     <div className="contact__form-div">
                         <label className="contact__form-tag">Email</label>
-                        <input type="email" name="email" className="contact__form-input" placeholder="Type your email" value={formData.email} onChange={handleChange}/>
+                        <input type="email" className="contact__form-input" placeholder="Type your email" {...register("Email", { required: {value:true,message: "Required"} , minLength:{value:8,message:"Minimum length is less the 8"}, maxLength:{value:25,message:"Minimum length is greater the 25"} })}/>
+                        {errors.Email && <div className="contact__form-tag" >{errors.Email.message}</div>}
                     </div>
 
                     <div className="contact__form-div contact__form-area">
                         <label className="contact__form-tag">Project</label>
-                        <textarea id="message" name="message" value={formData.message} onChange={handleChange} className="contact__form-input"/>
+                        <textarea id="message" placeholder="Type your Thoughts." {...register("Message")} className="contact__form-input"/>
+                        {errors.Message && <div className="contact__form-tag" >{errors.Message.message}</div>}                    
                         </div>
 
-                    <button type="submit" className="button button--flex glow">
+                    {isSubmitting && <div className="loader"> </div> }{!isSubmitting && <button type="submit" disabled={isSubmitting} className="button button--flex glow">
                         Send Message
                         <svg
                             class="button__icon"
@@ -77,7 +99,7 @@ const Contact = () => {
                                 fill="var(--container-color)"
                             ></path>
                         </svg>
-                    </button>
+                    </button>}
                 </Form>
             </div>
         </div>
